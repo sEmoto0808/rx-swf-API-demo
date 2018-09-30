@@ -63,7 +63,7 @@ extension ViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell",
                                                          for: IndexPath(row: i, section: 0))
                 cell.textLabel?.text = repository.name
-                cell.detailTextLabel?.text = repository.html_url
+                cell.detailTextLabel?.text = repository.url
                 
                 return cell
             }.disposed(by: disposeBag)

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A26D7C0421610C5500784CBD /* RepositoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0321610C5500784CBD /* RepositoryInfo.swift */; };
+		A26D7C0621610D8100784CBD /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0521610D8100784CBD /* DecodableDataParser.swift */; };
+		A26D7C0821610E7D00784CBD /* GitHubBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0721610E7D00784CBD /* GitHubBaseRequest.swift */; };
+		A26D7C0D2161104B00784CBD /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0C2161104B00784CBD /* GitHubAPI.swift */; };
+		A26D7C0F2161166500784CBD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0E2161166500784CBD /* APIClient.swift */; };
 		A279235521610AE400A316BD /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A279235421610AE300A316BD /* APIKit.framework */; };
 		A279235721610AF500A316BD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A279235621610AF500A316BD /* Result.framework */; };
 		A28BDC8B2160BD510094BB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BDC8A2160BD510094BB56 /* AppDelegate.swift */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A26D7C0321610C5500784CBD /* RepositoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfo.swift; sourceTree = "<group>"; };
+		A26D7C0521610D8100784CBD /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
+		A26D7C0721610E7D00784CBD /* GitHubBaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubBaseRequest.swift; sourceTree = "<group>"; };
+		A26D7C0C2161104B00784CBD /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
+		A26D7C0E2161166500784CBD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A279235421610AE300A316BD /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		A279235621610AF500A316BD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		A28BDC872160BD510094BB56 /* rxswf-API-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rxswf-API-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +76,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A26D7C0121610C2B00784CBD /* APIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A26D7C0221610C3A00784CBD /* Model */,
+			);
+			path = APIKit;
+			sourceTree = "<group>";
+		};
+		A26D7C0221610C3A00784CBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A26D7C0B2161103300784CBD /* Request */,
+				A26D7C0A2161102400784CBD /* Common */,
+				A26D7C092161101000784CBD /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A26D7C092161101000784CBD /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A26D7C0321610C5500784CBD /* RepositoryInfo.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		A26D7C0A2161102400784CBD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A26D7C0521610D8100784CBD /* DecodableDataParser.swift */,
+				A26D7C0721610E7D00784CBD /* GitHubBaseRequest.swift */,
+				A26D7C0E2161166500784CBD /* APIClient.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A26D7C0B2161103300784CBD /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A26D7C0C2161104B00784CBD /* GitHubAPI.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		A28BDC7E2160BD510094BB56 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +140,7 @@
 		A28BDC892160BD510094BB56 /* rxswf-API-demo */ = {
 			isa = PBXGroup;
 			children = (
+				A26D7C0121610C2B00784CBD /* APIKit */,
 				A29AAE9E2160CED800CEFCBB /* View */,
 				A29AAE9B2160C76A00CEFCBB /* ViewModel */,
 				A29AAE982160C63D00CEFCBB /* Model */,
@@ -239,10 +294,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26D7C0421610C5500784CBD /* RepositoryInfo.swift in Sources */,
 				A28BDC8D2160BD510094BB56 /* ViewController.swift in Sources */,
+				A26D7C0621610D8100784CBD /* DecodableDataParser.swift in Sources */,
 				A29AAE9D2160C78B00CEFCBB /* RepositoryViewModel.swift in Sources */,
 				A29AAE9A2160C66000CEFCBB /* Repository.swift in Sources */,
+				A26D7C0821610E7D00784CBD /* GitHubBaseRequest.swift in Sources */,
 				A28BDC8B2160BD510094BB56 /* AppDelegate.swift in Sources */,
+				A26D7C0D2161104B00784CBD /* GitHubAPI.swift in Sources */,
+				A26D7C0F2161166500784CBD /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
