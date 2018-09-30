@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Repository from GitHubAPI-->
+        <!--Search Repository from GitHub API-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rxswf_API_demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Repository from GitHubAPI" id="8Xx-wu-Y01"/>
+                    <navigationItem key="navigationItem" title="Search Repository from GitHub API" id="8Xx-wu-Y01"/>
                     <connections>
                         <outlet property="rxSearchBar" destination="2ux-Ib-uUu" id="XL7-bk-vdZ"/>
                         <outlet property="rxTableView" destination="M78-Eu-MhS" id="KBw-Mj-4Cm"/>

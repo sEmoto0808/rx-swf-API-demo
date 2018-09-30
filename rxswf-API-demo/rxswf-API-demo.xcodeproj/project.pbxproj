@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A279235521610AE400A316BD /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A279235421610AE300A316BD /* APIKit.framework */; };
+		A279235721610AF500A316BD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A279235621610AF500A316BD /* Result.framework */; };
 		A28BDC8B2160BD510094BB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BDC8A2160BD510094BB56 /* AppDelegate.swift */; };
 		A28BDC8D2160BD510094BB56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BDC8C2160BD510094BB56 /* ViewController.swift */; };
 		A28BDC902160BD510094BB56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28BDC8E2160BD510094BB56 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A279235421610AE300A316BD /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		A279235621610AF500A316BD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		A28BDC872160BD510094BB56 /* rxswf-API-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rxswf-API-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28BDC8A2160BD510094BB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A28BDC8C2160BD510094BB56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A279235721610AF500A316BD /* Result.framework in Frameworks */,
+				A279235521610AE400A316BD /* APIKit.framework in Frameworks */,
 				A29AAE962160C3A900CEFCBB /* ObjectMapper.framework in Frameworks */,
 				A29AAE942160C39800CEFCBB /* RxDataSources.framework in Frameworks */,
 				A29AAE922160C38200CEFCBB /* Differentiator.framework in Frameworks */,
@@ -94,6 +100,8 @@
 		A29AAE882160C32400CEFCBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A279235621610AF500A316BD /* Result.framework */,
+				A279235421610AE300A316BD /* APIKit.framework */,
 				A29AAE952160C3A900CEFCBB /* ObjectMapper.framework */,
 				A29AAE932160C39800CEFCBB /* RxDataSources.framework */,
 				A29AAE912160C38200CEFCBB /* Differentiator.framework */,
@@ -213,6 +221,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			outputFileListPaths = (
 			);
