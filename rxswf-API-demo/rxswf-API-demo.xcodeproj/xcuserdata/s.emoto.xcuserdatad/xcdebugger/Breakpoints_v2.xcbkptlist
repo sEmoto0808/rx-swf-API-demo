@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/View/ViewController.swift"
+            timestampString = "559996060.25913"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "keyboardWillHide(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/View/ViewController.swift"
+            timestampString = "559996060.259577"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "keyboardWillShow(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "rxswf_API_demo.ViewController.(keyboardWillShow in _E391793C762264ADF0D0D3DD6187C28A)(Foundation.Notification) -&gt; ()"
+                  moduleName = "rxswf-API-demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s.emoto/Desktop/rxswf-API-demo/rxswf-API-demo/View/ViewController.swift"
+                  timestampString = "559996094.9151829"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "1202">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in rxswf_API_demo.ViewController.(keyboardWillShow in _E391793C762264ADF0D0D3DD6187C28A)(Foundation.Notification) -&gt; ()"
+                  moduleName = "rxswf-API-demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s.emoto/Desktop/rxswf-API-demo/rxswf-API-demo/View/ViewController.swift"
+                  timestampString = "559996094.920276"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
