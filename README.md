@@ -9,7 +9,7 @@ RxDataSources
 RxAlamofire  
 ObjectMapper
 
-Cartfile  
+**Cartfile**
 ```
 github "ReactiveX/RxSwift" ~> 4.0
 github "RxSwiftCommunity/RxDataSources" ~> 3.0
