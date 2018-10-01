@@ -55,10 +55,11 @@ extension ViewController {
         
         // ViewModel生成
         // 検索バーでの入力値の更新をトリガーにしてViewModel側に設置した処理を行う
-        repositoryViewModel = RepositoryViewModel(nameObservable: rx_searchBarText)
+        let input = RepositoryViewModel.Input.init(repositoryName: rx_searchBarText)
+        repositoryViewModel = RepositoryViewModel(trigger: input)
         
         // TableViewへのデータ表示
-        repositoryViewModel.rx_repositories
+        repositoryViewModel.output().rx_repositories
             .drive(rxTableView.rx.items) { (tableView, i, repository) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell",
                                                          for: IndexPath(row: i, section: 0))
@@ -69,7 +70,7 @@ extension ViewController {
             }.disposed(by: disposeBag)
         
         // 取得したデータ件数に応じたエラーハンドリング
-        repositoryViewModel.rx_repositories
+        repositoryViewModel.output().rx_repositories
             .drive(onNext: { repositories in
                 if repositories.count == 0 {
                     let alert = UIAlertController(title: ":(", message: "No repositories for this user.", preferredStyle: .alert)

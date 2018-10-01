@@ -15,17 +15,30 @@ import ObjectMapper
 
 final class RepositoryViewModel {
     
+    struct Input {
+        // 監視対象（トリガー）
+        var repositoryName: Observable<String>
+    }
+    
+    struct Output {
+        var rx_repositories: Driver<[RepositoryInfo]>
+    }
+    
     // MARK: - Properties
     
-    // オブジェクトの初期化時にプロパティの初期値を設定する
-    lazy var rx_repositories: Driver<[RepositoryInfo]> = fetchUserInfo()
-    // 監視対象
-    var repositoryName: Observable<String>!
+    // Viewから受け取るトリガー
+    private var _input: RepositoryViewModel.Input!
+    // Viewにデータをバインドする
+    private var _output: RepositoryViewModel.Output!
     
     // 初期化
-    // 監視対象のセット
-    init(nameObservable: Observable<String>) {
-        repositoryName = nameObservable
+    init(trigger: RepositoryViewModel.Input) {
+        _input = trigger
+        _output = RepositoryViewModel.Output.init(rx_repositories: fetchUserInfo())
+    }
+    
+    func output() -> RepositoryViewModel.Output {
+        return _output
     }
 }
 
@@ -34,7 +47,7 @@ extension RepositoryViewModel {
     // GitHubAPIから取得したデータをDriverに変換する
     private func fetchUserInfo() -> Driver<[RepositoryInfo]> {
         
-        return repositoryName
+        return _input.repositoryName
             // 1.処理中にインジケータを表示する
             .subscribeOn(MainScheduler.instance) // 以降メインスレッドで実行
             .do(onNext: { response in
@@ -50,7 +63,7 @@ extension RepositoryViewModel {
             })
             // 3.Driverに変換
             .observeOn(MainScheduler.instance)  // 以降メインスレッドで実行
-            .do(onNext: {response in
+            .do(onNext: { response in
                 //ネットワークインジケータを非表示状態にする
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             })
