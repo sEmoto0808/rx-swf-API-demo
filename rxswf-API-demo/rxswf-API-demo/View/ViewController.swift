@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     // MARK: - Properties
     
     private var repositoryViewModel: RepositoryViewModel!
-    private let disposeBag = DisposeBag()
     // 検索バーの値を監視対象にする
     private var rx_searchBarText: Observable<String> {
         return rxSearchBar.rx.text
@@ -31,6 +30,9 @@ class ViewController: UIViewController {
             .debounce(0.5, scheduler: MainScheduler.instance) // 0.5秒バッファ
             .distinctUntilChanged()
     }
+    private let disposeBag = DisposeBag()
+    // rxTableViewのデータソース
+    private let dataSource = RepositoryDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,14 +62,8 @@ extension ViewController {
         
         // TableViewへのデータ表示
         repositoryViewModel.output().rx_repositories
-            .drive(rxTableView.rx.items) { (tableView, i, repository) in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell",
-                                                         for: IndexPath(row: i, section: 0))
-                cell.textLabel?.text = repository.name
-                cell.detailTextLabel?.text = repository.url
-                
-                return cell
-            }.disposed(by: disposeBag)
+            .drive(rxTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
         
         // 取得したデータ件数に応じたエラーハンドリング
         repositoryViewModel.output().rx_repositories

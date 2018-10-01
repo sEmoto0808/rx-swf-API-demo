@@ -29,6 +29,7 @@
 		A29AAE962160C3A900CEFCBB /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29AAE952160C3A900CEFCBB /* ObjectMapper.framework */; };
 		A29AAE9A2160C66000CEFCBB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29AAE992160C66000CEFCBB /* Repository.swift */; };
 		A29AAE9D2160C78B00CEFCBB /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29AAE9C2160C78B00CEFCBB /* RepositoryViewModel.swift */; };
+		A2FBF984216280F500492D08 /* RepositoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FBF983216280F500492D08 /* RepositoryDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		A29AAE952160C3A900CEFCBB /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		A29AAE992160C66000CEFCBB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		A29AAE9C2160C78B00CEFCBB /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		A2FBF983216280F500492D08 /* RepositoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				A28BDC8C2160BD510094BB56 /* ViewController.swift */,
 				A28BDC8E2160BD510094BB56 /* Main.storyboard */,
+				A2FBF983216280F500492D08 /* RepositoryDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FBF984216280F500492D08 /* RepositoryDataSource.swift in Sources */,
 				A26D7C0421610C5500784CBD /* RepositoryInfo.swift in Sources */,
 				A22EBABC2161F4C700EF1B17 /* RepositoryModel.swift in Sources */,
 				A28BDC8D2160BD510094BB56 /* ViewController.swift in Sources */,
