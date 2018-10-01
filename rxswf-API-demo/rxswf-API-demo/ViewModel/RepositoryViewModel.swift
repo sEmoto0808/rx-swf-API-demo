@@ -30,6 +30,7 @@ final class RepositoryViewModel {
     private var _input: RepositoryViewModel.Input!
     // Viewにデータをバインドする
     private var _output: RepositoryViewModel.Output!
+    private let repositoryModel = RepositoryModel()
     
     // 初期化
     init(trigger: RepositoryViewModel.Input) {
@@ -59,7 +60,7 @@ extension RepositoryViewModel {
             .flatMapLatest({ text in
                 
                 //APIからデータを取得する
-                return APIClient().get(withRequest: GitHubAPI.SearchRepositories(userName: text))
+                return RepositoryModel().get(request: GitHubAPI.SearchRepositories(userName: text))
             })
             // 3.Driverに変換
             .observeOn(MainScheduler.instance)  // 以降メインスレッドで実行

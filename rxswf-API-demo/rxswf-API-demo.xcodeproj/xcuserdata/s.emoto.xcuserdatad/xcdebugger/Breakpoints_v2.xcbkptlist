@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rxswf-API-demo/View/ViewController.swift"
-            timestampString = "560066884.1285"
+            timestampString = "560071202.024211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -22,47 +22,143 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rxswf-API-demo/View/ViewController.swift"
-            timestampString = "560066884.128557"
+            timestampString = "560071202.024513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
             endingLineNumber = "131"
             landmarkName = "keyboardWillShow(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/View/ViewController.swift"
+            timestampString = "560071202.024568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "setupRx()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/View/ViewController.swift"
+            timestampString = "560071202.024614"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "setupRx()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/ViewModel/RepositoryViewModel.swift"
+            timestampString = "560071202.02466"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "fetchUserInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/ViewModel/RepositoryViewModel.swift"
+            timestampString = "560071202.025121"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "fetchUserInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/APIKit/API/Common/APIClient.swift"
+            timestampString = "560070185.05393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "get(withRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rxswf-API-demo/View/ViewController.swift"
+            timestampString = "560071286.970378"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "setupRx()"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "rxswf_API_demo.ViewController.(keyboardWillShow in _E391793C762264ADF0D0D3DD6187C28A)(Foundation.Notification) -&gt; ()"
+                  symbolName = "rxswf_API_demo.ViewController.(setupRx in _E391793C762264ADF0D0D3DD6187C28A)() -&gt; ()"
                   moduleName = "rxswf-API-demo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/s.emoto/Desktop/rxswf-API-demo/rxswf-API-demo/View/ViewController.swift"
-                  timestampString = "559996094.9151829"
+                  urlString = "file:///Users/s.emoto/Desktop/rx-swf-API-demo/rxswf-API-demo/rxswf-API-demo/View/ViewController.swift"
+                  timestampString = "560071286.979949"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "1202">
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "2092">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in rxswf_API_demo.ViewController.(keyboardWillShow in _E391793C762264ADF0D0D3DD6187C28A)(Foundation.Notification) -&gt; ()"
+                  symbolName = "closure #2 (Swift.Array&lt;rxswf_API_demo.RepositoryInfo&gt;) -&gt; () in rxswf_API_demo.ViewController.(setupRx in _E391793C762264ADF0D0D3DD6187C28A)() -&gt; ()"
                   moduleName = "rxswf-API-demo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/s.emoto/Desktop/rxswf-API-demo/rxswf-API-demo/View/ViewController.swift"
-                  timestampString = "559996094.920276"
+                  urlString = "file:///Users/s.emoto/Desktop/rx-swf-API-demo/rxswf-API-demo/rxswf-API-demo/View/ViewController.swift"
+                  timestampString = "560071286.984812"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "839">
                </Location>
             </Locations>
          </BreakpointContent>

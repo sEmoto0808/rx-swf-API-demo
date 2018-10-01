@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22EBABC2161F4C700EF1B17 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EBABB2161F4C700EF1B17 /* RepositoryModel.swift */; };
 		A26D7C0421610C5500784CBD /* RepositoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0321610C5500784CBD /* RepositoryInfo.swift */; };
 		A26D7C0621610D8100784CBD /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0521610D8100784CBD /* DecodableDataParser.swift */; };
 		A26D7C0821610E7D00784CBD /* GitHubBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26D7C0721610E7D00784CBD /* GitHubBaseRequest.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A22EBABB2161F4C700EF1B17 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		A26D7C0321610C5500784CBD /* RepositoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfo.swift; sourceTree = "<group>"; };
 		A26D7C0521610D8100784CBD /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		A26D7C0721610E7D00784CBD /* GitHubBaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubBaseRequest.swift; sourceTree = "<group>"; };
@@ -76,9 +78,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A22EBABA2161F49600EF1B17 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A26D7C092161101000784CBD /* Response */,
+				A26D7C0A2161102400784CBD /* Common */,
+				A26D7C0B2161103300784CBD /* Request */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		A26D7C0121610C2B00784CBD /* APIKit */ = {
 			isa = PBXGroup;
 			children = (
+				A22EBABA2161F49600EF1B17 /* API */,
 				A26D7C0221610C3A00784CBD /* Model */,
 			);
 			path = APIKit;
@@ -87,9 +100,7 @@
 		A26D7C0221610C3A00784CBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A26D7C0B2161103300784CBD /* Request */,
-				A26D7C0A2161102400784CBD /* Common */,
-				A26D7C092161101000784CBD /* Response */,
+				A22EBABB2161F4C700EF1B17 /* RepositoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A26D7C0421610C5500784CBD /* RepositoryInfo.swift in Sources */,
+				A22EBABC2161F4C700EF1B17 /* RepositoryModel.swift in Sources */,
 				A28BDC8D2160BD510094BB56 /* ViewController.swift in Sources */,
 				A26D7C0621610D8100784CBD /* DecodableDataParser.swift in Sources */,
 				A29AAE9D2160C78B00CEFCBB /* RepositoryViewModel.swift in Sources */,

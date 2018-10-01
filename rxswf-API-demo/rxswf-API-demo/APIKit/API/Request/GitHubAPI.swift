@@ -11,8 +11,6 @@ import APIKit
 
 final class GitHubAPI {
     
-    
-    
     struct SearchRepositories: GitHubBaseRequest {
         typealias Response = [RepositoryInfo]
         
@@ -21,9 +19,6 @@ final class GitHubAPI {
             return "/users/\(self.text)/repos"
             
         }
-//        var parameters: Any? {
-//            return ["q": query, "page": 1]
-//        }
         
         let text: String
         
