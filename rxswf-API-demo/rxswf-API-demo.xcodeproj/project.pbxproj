@@ -81,8 +81,8 @@
 		A22EBABA2161F49600EF1B17 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A26D7C092161101000784CBD /* Response */,
 				A26D7C0A2161102400784CBD /* Common */,
+				A26D7C092161101000784CBD /* Response */,
 				A26D7C0B2161103300784CBD /* Request */,
 			);
 			path = API;

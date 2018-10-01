@@ -12,16 +12,11 @@ import RxCocoa
 
 final class RepositoryModel {
     
-    func get(request: GitHubAPI.SearchRepositories) -> Driver<[RepositoryInfo]> {
-        
-        return APIClient().send(withRequest: request)
-            .asDriver(onErrorJustReturn: []) // 0件だった場合のonError対策
-    }
-    
     func rx_get(from UI: Observable<String>) -> Driver<[RepositoryInfo]> {
         return UI
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .flatMapLatest({ text in
+                // APIからデータを取得する
                 return APIClient().send(withRequest: GitHubAPI.SearchRepositories(userName: text))
                     .asDriver(onErrorJustReturn: []) // 0件だった場合のonError対策
             })

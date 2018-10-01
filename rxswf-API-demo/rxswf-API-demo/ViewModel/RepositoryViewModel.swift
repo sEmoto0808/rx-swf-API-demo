@@ -30,6 +30,7 @@ final class RepositoryViewModel {
     private var _input: RepositoryViewModel.Input!
     // Viewにデータをバインドする
     private var _output: RepositoryViewModel.Output!
+    // GitHub APIからデータを取得するModel
     private let repositoryModel = RepositoryModel()
     
     // 初期化
@@ -45,30 +46,9 @@ final class RepositoryViewModel {
 
 extension RepositoryViewModel {
     
-    // GitHubAPIから取得したデータをDriverに変換する
+    // InputからModel経由でOutputを生成する
     private func createOutput() -> Driver<[RepositoryInfo]> {
         
-//        return _input.repositoryName
-//            // 1.処理中にインジケータを表示する
-//            .subscribeOn(MainScheduler.instance) // 以降メインスレッドで実行
-//            .do(onNext: { response in
-//                //ネットワークインジケータを表示状態にする
-//                UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//            })
-//            // 2.GitHubAPIにアクセスする（APIKit）
-//            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))  // 以降バックグラウンドで実行
-//            .flatMapLatest({ text in
-//
-//                //APIからデータを取得する
-//                return RepositoryModel().get(request: GitHubAPI.SearchRepositories(userName: text))
-//            })
-//            // 3.Driverに変換
-//            .observeOn(MainScheduler.instance)  // 以降メインスレッドで実行
-//            .do(onNext: { response in
-//                //ネットワークインジケータを非表示状態にする
-//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//            })
-//            .asDriver(onErrorJustReturn: []) //Driverに変換する
         return repositoryModel.rx_get(from: _input.repositoryName)
     }
 }
