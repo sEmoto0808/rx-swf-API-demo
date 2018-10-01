@@ -8,11 +8,28 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 final class RepositoryModel {
     
-    func get(request: GitHubAPI.SearchRepositories) -> Observable<[RepositoryInfo]> {
+    func get(request: GitHubAPI.SearchRepositories) -> Driver<[RepositoryInfo]> {
         
-        return APIClient().get(withRequest: request)
+        return APIClient().send(withRequest: request)
+            .asDriver(onErrorJustReturn: []) // 0件だった場合のonError対策
+    }
+    
+    func rx_get(from UI: Observable<String>) -> Driver<[RepositoryInfo]> {
+        return UI
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .flatMapLatest({ text in
+                return APIClient().send(withRequest: GitHubAPI.SearchRepositories(userName: text))
+                    .asDriver(onErrorJustReturn: []) // 0件だった場合のonError対策
+            })
+            .observeOn(MainScheduler.instance)
+            .do(onNext: { response in
+                // Success
+                print("success")
+            })
+            .asDriver(onErrorDriveWith: Driver.empty())
     }
 }

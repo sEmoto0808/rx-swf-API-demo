@@ -14,20 +14,7 @@ import UIKit
 
 final class APIClient {
     
-    func rx_get<T: Request>(withRequest request: T, from UI: Observable<Any>) -> Driver<T.Response> {
-        return UI
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .flatMapLatest({ _ in
-                return self.get(withRequest: request)
-            })
-            .observeOn(MainScheduler.instance)
-            .asDriver(onErrorDriveWith: Driver.empty())
-    }
-}
-
-extension APIClient {
-    
-    func get<T: Request>(withRequest request: T) -> Observable<T.Response> {
+    func send<T: Request>(withRequest request: T) -> Observable<T.Response> {
         
         return Observable
             .create { observer in

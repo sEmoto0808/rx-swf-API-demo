@@ -35,7 +35,7 @@ final class RepositoryViewModel {
     // 初期化
     init(trigger: RepositoryViewModel.Input) {
         _input = trigger
-        _output = RepositoryViewModel.Output.init(rx_repositories: fetchUserInfo())
+        _output = RepositoryViewModel.Output.init(rx_repositories: createOutput())
     }
     
     func output() -> RepositoryViewModel.Output {
@@ -46,28 +46,29 @@ final class RepositoryViewModel {
 extension RepositoryViewModel {
     
     // GitHubAPIから取得したデータをDriverに変換する
-    private func fetchUserInfo() -> Driver<[RepositoryInfo]> {
+    private func createOutput() -> Driver<[RepositoryInfo]> {
         
-        return _input.repositoryName
-            // 1.処理中にインジケータを表示する
-            .subscribeOn(MainScheduler.instance) // 以降メインスレッドで実行
-            .do(onNext: { response in
-                //ネットワークインジケータを表示状態にする
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            })
-            // 2.GitHubAPIにアクセスする（APIKit）
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))  // 以降バックグラウンドで実行
-            .flatMapLatest({ text in
-                
-                //APIからデータを取得する
-                return RepositoryModel().get(request: GitHubAPI.SearchRepositories(userName: text))
-            })
-            // 3.Driverに変換
-            .observeOn(MainScheduler.instance)  // 以降メインスレッドで実行
-            .do(onNext: { response in
-                //ネットワークインジケータを非表示状態にする
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            })
-            .asDriver(onErrorJustReturn: []) //Driverに変換する
+//        return _input.repositoryName
+//            // 1.処理中にインジケータを表示する
+//            .subscribeOn(MainScheduler.instance) // 以降メインスレッドで実行
+//            .do(onNext: { response in
+//                //ネットワークインジケータを表示状態にする
+//                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//            })
+//            // 2.GitHubAPIにアクセスする（APIKit）
+//            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))  // 以降バックグラウンドで実行
+//            .flatMapLatest({ text in
+//
+//                //APIからデータを取得する
+//                return RepositoryModel().get(request: GitHubAPI.SearchRepositories(userName: text))
+//            })
+//            // 3.Driverに変換
+//            .observeOn(MainScheduler.instance)  // 以降メインスレッドで実行
+//            .do(onNext: { response in
+//                //ネットワークインジケータを非表示状態にする
+//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//            })
+//            .asDriver(onErrorJustReturn: []) //Driverに変換する
+        return repositoryModel.rx_get(from: _input.repositoryName)
     }
 }
