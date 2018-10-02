@@ -12,12 +12,14 @@ import RxCocoa
 
 final class RepositoryModel {
     
-    func rx_get(from UI: Observable<String>) -> Driver<[RepositoryInfo]> {
+    let defaultText = "T"
+    
+    func rx_get(from UI: Observable<Void>) -> Driver<[RepositoryInfo]> {
         return UI
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .flatMapLatest({ text in
                 // APIからデータを取得する
-                return APIClient().send(withRequest: GitHubAPI.SearchRepositories(userName: text))
+                return APIClient().send(withRequest: GitHubAPI.SearchRepositories(userName: self.defaultText))
                     .asDriver(onErrorJustReturn: []) // 0件だった場合のonError対策
             })
             .observeOn(MainScheduler.instance)

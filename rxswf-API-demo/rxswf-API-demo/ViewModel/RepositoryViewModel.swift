@@ -17,7 +17,7 @@ final class RepositoryViewModel {
     
     struct Input {
         // 監視対象（トリガー）
-        var repositoryName: Observable<String>
+        var repositoryName: Observable<Void>
     }
     
     struct Output {

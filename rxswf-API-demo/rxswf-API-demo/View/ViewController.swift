@@ -57,7 +57,9 @@ extension ViewController {
         
         // ViewModel生成
         // 検索バーでの入力値の更新をトリガーにしてViewModel側に設置した処理を行う
-        let input = RepositoryViewModel.Input.init(repositoryName: rx_searchBarText)
+        let trigger_viewWillAppear = rx.sentMessage(#selector(viewWillAppear(_:))).map { _ in () }
+        
+        let input = RepositoryViewModel.Input.init(repositoryName: trigger_viewWillAppear)
         repositoryViewModel = RepositoryViewModel(trigger: input)
         
         // TableViewへのデータ表示
