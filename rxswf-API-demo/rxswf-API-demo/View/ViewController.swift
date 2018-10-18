@@ -86,8 +86,8 @@ extension ViewController {
     private func setupUI() {
         
         // テーブルビューにGestureRecognizerを付与する(キーボード表示・非表示用)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tableTapped(_:)))
-        rxTableView.addGestureRecognizer(tap)
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(tableTapped(_:)))
+//        rxTableView.addGestureRecognizer(tap)
         
         // MARK: - キーボードのイベントを監視対象にする
         // キーボード表示
@@ -100,15 +100,36 @@ extension ViewController {
                                                selector: #selector(keyboardWillHide(_:)),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
+        
+        // TableViewのセルタップ時の処理
+        rxTableView.rx.itemSelected
+            .subscribe { [weak self] indexPath in
+                guard let weakSelf = self, let indexPath = indexPath.element else { return}
+                
+                weakSelf.tableTapped(indexPath: indexPath)
+                let message = weakSelf.dataSource.repositories[indexPath.row].name
+                weakSelf.showAlert(message: message)
+                
+                print("Selected")
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func showAlert(message: String) {
+        
+        let alert = UIAlertController(title: "did Selected", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     //テーブルビューのセルタップ時に発動されるメソッド
-    @objc
-    private func tableTapped(_ recognizer: UITapGestureRecognizer) {
+    private func tableTapped(indexPath: IndexPath) {
         
         //どのセルがタップされたかを探知する
-        let location = recognizer.location(in: rxTableView)
-        let path = rxTableView.indexPathForRow(at: location)
+//        let location = recognizer.location(in: rxTableView)
+        //let path = rxTableView.indexPathForRow(at: indexPath.row)
         
         //キーボードが表示されているか否かで処理を分ける
         if rxSearchBar.isFirstResponder {
@@ -116,10 +137,10 @@ extension ViewController {
             //キーボードを閉じる
             rxSearchBar.resignFirstResponder()
             
-        } else if let path = path {
+        } else  {
             
             //タップされたセルを中央位置に持ってくる
-            rxTableView.selectRow(at: path, animated: true, scrollPosition: .middle)
+            rxTableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
         }
     }
     
